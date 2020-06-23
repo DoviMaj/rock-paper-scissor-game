@@ -1,0 +1,64 @@
+li{
+  display: inline;
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid #0000008f;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+html {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+body{
+  font-size: 25px;
+  font-family: sans-serif;
+
+}
+
+#user-choices-ul{
+  display: flex;
+  justify-content: space-evenly;
+}
+#dashboard{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.dashboardItems{
+  padding: 20px;
+  margin: 15px;
+}
+.choices{
+  padding: 30px;
+  margin: 17px;
+  background-color: rgba(73,155,234,1);
+  box-shadow: 6px 13px 45px -13px rgba(0,0,0,0.66);
+}
+.choices:hover{
+  animation: slide 2s ease-in-out .5s infinite alternate;
+}
+#display-results, #display-score, #user-choice, #computer-choice{
+  cursor: default;
+  border: none;
+}
+
+
+#reload-button{
+  background-color: rgba(73,155,234,1);
+  box-shadow: 6px 13px 45px -13px rgba(0,0,0,0.66);
+}
+
+
+
+
+
+
