@@ -4,7 +4,7 @@ let gameEnded = false;
   
 let ul = document.querySelector("ul");
 ul.addEventListener('click', function(event){
-  ////debugger;
+  //debugger;
   event.target.classList.add("clicked")
   if(!gameEnded){
     game.playGame();
@@ -27,18 +27,15 @@ let game = {
     }
   },
   userChoice: function(){
+    //debugger;
     let ul = document.querySelector("ul");
-    let choicesArray = [];
-    ul.childNodes.forEach(function(i){
-      if(i.nodeName !== '#text'){
-        choicesArray.push(i)
+    for(var i = 0; i < ul.childNodes.length; i++){
+      if(ul.childNodes[i].nodeName !== '#text'){
+        if(ul.childNodes[i].classList.contains('clicked')){
+          return ul.childNodes[i].innerHTML.toLowerCase();
+        }
       }
-    });
-    for(var i =0; i< choicesArray.length; i++){
-      if(choicesArray[i].classList.contains('clicked')){
-        return choicesArray[i].innerHTML.toLowerCase();
-      }
-    } 
+    };
   },
   computerChoice: function(){
     return this.values[this.moreRandomNumber()];
@@ -46,7 +43,7 @@ let game = {
   playGame: function(){
     //debbuger;
     let computerChoice = this.computerChoice();
-    userChoice = this.userChoice()
+    userChoice = this.userChoice();
     view.computerChoice(computerChoice);
     view.userChoice(userChoice);
     
@@ -65,8 +62,10 @@ let game = {
     view.score(userScore, computerScore);
     let ul = document.querySelector("ul");
     ul.childNodes.forEach(function(li){
-      if(li.className === 'clicked'){
-        li.classList.remove("clicked")
+      if(li.nodeName !== '#text'){
+        if(li.classList.contains('clicked')){
+          li.classList.remove("clicked")
+        }
       }
     })
     if (computerScore === 5 || userScore === 5){
@@ -174,4 +173,4 @@ let view = {
 // view.restart() should display a button that refresh the page (x)
 // should have a nice font family and background color(x)
 // check bugg on score in the last round (X)
-// user is stuck on rock ()
+// user is stuck on rock (x)
