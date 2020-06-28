@@ -56,6 +56,15 @@ body{
   background-color: rgba(73,155,234,1);
   box-shadow: 6px 13px 45px -13px rgba(0,0,0,0.66);
 }
+footer{
+  width: 100%;
+  text-align: center;
+}
+a{
+  font-size: 15px;
+  display: inline-block;
+  color: lightblue;
+}
 
 
 

@@ -53,7 +53,7 @@ let game = {
       ++userScore;
       view.results(`You win`);
     } else if(userChoice === computerChoice){
-      view.results(`draw`); 
+      view.results(`Its a tie`); 
     } 
     else {
       ++computerScore;
